@@ -1,26 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Layout, Navigation, Header, Drawer, Content } from 'react-mdl';
+import Main from './layouts/main';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+        <div className="demo-big-content">
+          <Layout>
+
+            <Header title="Bachtiar" scroll>
+
+              <Navigation>
+                <a href="/About">About Me</a>
+                <a href="/Contact">Contact Me</a>
+                <a href="/Projects">Projects</a>
+              </Navigation>
+            </Header>
+
+            <Drawer title="Title">
+              <Navigation>
+                <a href="/About">About Me</a>
+                <a href="/Contact">Contact Me</a>
+                <a href="/Projects">Projects</a>
+              </Navigation>
+            </Drawer>
+            <Content>
+              <div className="page-content" />
+              <Main />
+            </Content>
+          </Layout>
+        </div>
+      </div>
+    </div >
   );
 }
-
 export default App;
